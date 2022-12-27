@@ -1,4 +1,10 @@
 [tool.pdm]
+[tool.pdm.dev-dependencies]
+dev = [
+    "pycheck>=0.1",
+    "pytest>=7.2.0",
+    "httpx>=0.23.1",
+]
 
 [project]
 name = ""
