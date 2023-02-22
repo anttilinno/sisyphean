@@ -8,7 +8,8 @@ from app.api import deps
 
 router = APIRouter()
 
-@router.get("/", response_model=List[schemas.Todo])
+
+@router.get("", response_model=List[schemas.Todo])
 def read_todos(
     db: Session = Depends(deps.get_db),
     skip: int = 0,
@@ -21,7 +22,7 @@ def read_todos(
     return crud.todo.get_multi(db, skip=skip, limit=limit)
 
 
-@router.post("/", response_model=schemas.Todo)
+@router.post("", response_model=schemas.Todo)
 def create_todo(
     *,
     db: Session = Depends(deps.get_db),
